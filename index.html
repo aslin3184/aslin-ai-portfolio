@@ -1,58 +1,2175 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5f5f7"><title>李科乐 — AI Video Creator</title>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff"><title>李科乐 — AI Video Creator</title>
 <style>
-:root{--bg:#f5f5f7;--ink:#1d1d1f;--muted:#6e6e73;--line:#d2d2d7;--blue:#06c;--max:1120px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit;cursor:pointer}.nav{height:64px;position:sticky;top:0;z-index:20;background:#f5f5f7d9;backdrop-filter:blur(20px);border-bottom:1px solid #0000000c}.nav-inner{max-width:var(--max);height:100%;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:15px;font-weight:700}.brand span{color:var(--muted);font-weight:400;margin-left:8px;font-size:11px;letter-spacing:1px}.navlinks{display:flex;gap:26px;font-size:13px;color:#424245}.navlinks a:hover{color:var(--blue)}.small-btn{border:1px solid var(--line);background:transparent;border-radius:999px;padding:8px 13px;font-size:12px;color:var(--ink)}.small-btn:hover{background:#e8e8ed}.wrap{max-width:var(--max);margin:auto;padding:0 24px}.hero{text-align:center;padding:105px 0 75px}.eyebrow,.kicker{font-size:12px;letter-spacing:2px;color:var(--muted);font-weight:700}.hero h1{font-size:clamp(44px,8vw,86px);letter-spacing:-.065em;line-height:1.05;margin:22px auto;max-width:950px}.gradient{background:linear-gradient(110deg,#111 10%,#777 53%,#06c 95%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{font-size:clamp(16px,2vw,20px);line-height:1.75;color:var(--muted);max-width:690px;margin:auto}.hero-cta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 20px;font-size:14px;font-weight:600;border:1px solid var(--ink);transition:.2s}.pill:hover{transform:translateY(-2px)}.primary{background:var(--ink);color:#fff}.hero-art{max-width:960px;margin:70px auto 0;position:relative;border-radius:32px;overflow:hidden;min-height:310px;background:radial-gradient(ellipse at 50% 120%,#5b84bd,#28374d 30%,#10151e 62%,#08090c 100%);display:grid;place-items:center;color:white}.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #ffffff22;border-radius:50%;width:480px;height:480px;left:50%;top:65%;transform:translate(-50%,-50%)}.hero-art:after{width:650px;height:650px}.art-core{position:relative;z-index:1;text-align:center;padding:45px 20px}.orb{width:90px;height:90px;margin:0 auto 24px;border-radius:27px;background:linear-gradient(135deg,#fff,#8fa6c8 45%,#4269a0);box-shadow:0 15px 70px #7293ca55;transform:rotate(-12deg)}.art-core strong{display:block;font-size:clamp(28px,5vw,48px);letter-spacing:-.04em}.art-core span{display:block;margin-top:10px;color:#c6ced9;font-size:12px;letter-spacing:2px}.section{padding:70px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:32px}.section h2{font-size:clamp(34px,5vw,56px);letter-spacing:-.055em;line-height:1.1;margin:12px 0 0}.intro{max-width:410px;color:var(--muted);line-height:1.8;font-size:14px}.advantages{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.adv{background:white;border-radius:27px;padding:28px;min-height:215px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #00000008}.num{font-size:12px;color:var(--muted);letter-spacing:1px}.adv h3{font-size:21px;margin:25px 0 10px;letter-spacing:-.5px}.adv p{font-size:14px;line-height:1.8;color:var(--muted);margin:0}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:24px;overflow:hidden;margin-top:16px}.metric{background:#fff;padding:24px 20px}.metric strong{display:block;font-size:clamp(25px,3vw,36px);letter-spacing:-1px}.metric span{display:block;margin-top:7px;font-size:12px;color:var(--muted);line-height:1.6}.portfolio-section{background:white;border-radius:36px;padding:70px 0;margin:20px 0 0}.portfolio-tools{display:flex;gap:10px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:transparent;padding:9px 14px;border-radius:999px;color:#4d4d52;font-size:12px}.filter.active{background:var(--ink);color:white;border-color:var(--ink)}.portfolio-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.work-card{border-radius:22px;overflow:hidden;background:var(--bg);border:1px solid #00000008;min-width:0}.work-media{aspect-ratio:16/10;background:linear-gradient(135deg,#dce2ea,#aeb9c9);display:flex;align-items:center;justify-content:center;overflow:hidden}.work-media img,.work-media video{width:100%;height:100%;object-fit:cover;display:block}.placeholder{text-align:center;padding:20px;color:#596575}.play{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:#ffffffbb;color:#1d1d1f;margin:0 auto 14px;font-size:20px}.placeholder strong{display:block;color:#344050;font-size:14px}.placeholder span{font-size:11px;display:block;margin-top:6px}.work-info{padding:18px 18px 20px}.work-top{display:flex;justify-content:space-between;align-items:center;gap:10px}.tag{font-size:11px;background:#e7e7eb;padding:5px 9px;border-radius:999px}.work-info h3{font-size:17px;margin:12px 0 7px}.work-info p{font-size:13px;line-height:1.7;color:var(--muted);margin:0;white-space:pre-wrap}.work-date{font-size:11px;color:#8a8a90}.empty{grid-column:1/-1;border:1px dashed var(--line);border-radius:24px;padding:46px 20px;text-align:center;color:var(--muted);line-height:1.8}.empty strong{display:block;color:var(--ink);font-size:17px;margin-bottom:7px}.upload-panel{margin-top:22px;border:1px solid var(--line);border-radius:24px;padding:24px;background:#fafafa;display:none}.upload-panel.open{display:block}.upload-panel h3{margin:0 0 6px;font-size:20px}.hint{font-size:12px;color:var(--muted);line-height:1.8;margin:0 0 20px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:12px;color:#55555b}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);background:white;border-radius:12px;padding:11px 12px;outline:none;font-size:13px}.field textarea{min-height:82px;resize:vertical}.form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.danger{border-color:#e3b8b8;color:#a12a2a}.bottom{background:#111113;color:white;border-radius:34px;padding:55px;margin:70px auto 40px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}.bottom h2{font-size:clamp(32px,4vw,48px);letter-spacing:-.05em;line-height:1.15;margin:12px 0 16px}.bottom p{color:#b4b4bb;font-size:14px;line-height:1.8;margin:0;max-width:560px}.contact-box{border-left:1px solid #424247;padding-left:32px}.contact-box span{display:block;color:#a1a1a8;font-size:12px;margin:16px 0 8px}.contact-box a{font-size:16px;word-break:break-word}.contact-box .pill{margin-top:18px;color:white;border-color:#626269}footer{padding:22px 0 34px;color:#85858c;font-size:11px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#1d1d1f;color:white;padding:12px 18px;border-radius:999px;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:99}.toast.show{opacity:1;transform:translate(-50%,0)}
+:root{--bg:#f5f5f7;--ink:#1d1d1f;--muted:#6e6e73;--line:#d2d2d7;--blue:#3569a8;--max:1120px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit;cursor:pointer}.nav{height:64px;position:sticky;top:0;z-index:20;background:#f5f5f7d9;backdrop-filter:blur(20px);border-bottom:1px solid #0000000c}.nav-inner{max-width:var(--max);height:100%;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:15px;font-weight:700}.brand span{color:var(--muted);font-weight:400;margin-left:8px;font-size:11px;letter-spacing:1px}.navlinks{display:flex;gap:26px;font-size:13px;color:#424245}.navlinks a:hover{color:var(--blue)}.small-btn{border:1px solid var(--line);background:transparent;border-radius:999px;padding:8px 13px;font-size:12px;color:var(--ink)}.small-btn:hover{background:#e8e8ed}.wrap{max-width:var(--max);margin:auto;padding:0 24px}.hero{text-align:center;padding:105px 0 75px}.eyebrow,.kicker{font-size:12px;letter-spacing:2px;color:var(--muted);font-weight:700}.hero h1{font-size:clamp(44px,8vw,86px);letter-spacing:-.065em;line-height:1.05;margin:22px auto;max-width:950px}.gradient{background:linear-gradient(110deg,#111 10%,#777 53%,#3569a8 95%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{font-size:clamp(16px,2vw,20px);line-height:1.75;color:var(--muted);max-width:690px;margin:auto}.hero-cta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 20px;font-size:14px;font-weight:600;border:1px solid var(--ink);transition:.2s}.pill:hover{transform:translateY(-2px)}.primary{background:var(--ink);color:#fff}.hero-art{max-width:960px;margin:70px auto 0;position:relative;border-radius:32px;overflow:hidden;min-height:310px;background:radial-gradient(ellipse at 50% 120%,#8fb4e0,#27496f 30%,#10151e 62%,#08090c 100%);display:grid;place-items:center;color:white}.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #ffffff22;border-radius:50%;width:480px;height:480px;left:50%;top:65%;transform:translate(-50%,-50%)}.hero-art:after{width:650px;height:650px}.art-core{position:relative;z-index:1;text-align:center;padding:45px 20px}.orb{width:90px;height:90px;margin:0 auto 24px;border-radius:27px;background:linear-gradient(135deg,#fff,#bfd5ef 45%,#3569a8);box-shadow:0 15px 70px #3569a855;transform:rotate(-12deg)}.art-core strong{display:block;font-size:clamp(28px,5vw,48px);letter-spacing:-.04em}.art-core span{display:block;margin-top:10px;color:#c6ced9;font-size:12px;letter-spacing:2px}.section{padding:70px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:32px}.section h2{font-size:clamp(34px,5vw,56px);letter-spacing:-.055em;line-height:1.1;margin:12px 0 0}.intro{max-width:410px;color:var(--muted);line-height:1.8;font-size:14px}.advantages{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.adv{background:white;border-radius:27px;padding:28px;min-height:215px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #00000008}.num{font-size:12px;color:var(--muted);letter-spacing:1px}.adv h3{font-size:21px;margin:25px 0 10px;letter-spacing:-.5px}.adv p{font-size:14px;line-height:1.8;color:var(--muted);margin:0}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:24px;overflow:hidden;margin-top:16px}.metric{background:#fff;padding:24px 20px}.metric strong{display:block;font-size:clamp(25px,3vw,36px);letter-spacing:-1px}.metric span{display:block;margin-top:7px;font-size:12px;color:var(--muted);line-height:1.6}.portfolio-section{background:white;border-radius:36px;padding:70px 0;margin:20px 0 0}.portfolio-tools{display:flex;gap:10px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:transparent;padding:9px 14px;border-radius:999px;color:#4d4d52;font-size:12px}.filter.active{background:var(--ink);color:white;border-color:var(--ink)}.portfolio-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.work-card{border-radius:22px;overflow:hidden;background:var(--bg);border:1px solid #00000008;min-width:0}.work-media{aspect-ratio:16/10;background:linear-gradient(135deg,#ffe1cd,#f5b48d);display:flex;align-items:center;justify-content:center;overflow:hidden}.work-media img,.work-media video{width:100%;height:100%;object-fit:cover;display:block}.placeholder{text-align:center;padding:20px;color:#80543b}.play{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:#ffffffbb;color:#1d1d1f;margin:0 auto 14px;font-size:20px}.placeholder strong{display:block;color:#633719;font-size:14px}.placeholder span{font-size:11px;display:block;margin-top:6px}.work-info{padding:18px 18px 20px}.work-top{display:flex;justify-content:space-between;align-items:center;gap:10px}.tag{font-size:11px;background:#e7e7eb;padding:5px 9px;border-radius:999px}.work-info h3{font-size:17px;margin:12px 0 7px}.work-info p{font-size:13px;line-height:1.7;color:var(--muted);margin:0;white-space:pre-wrap}.work-date{font-size:11px;color:#8a8a90}.empty{grid-column:1/-1;border:1px dashed var(--line);border-radius:24px;padding:46px 20px;text-align:center;color:var(--muted);line-height:1.8}.empty strong{display:block;color:var(--ink);font-size:17px;margin-bottom:7px}.upload-panel{margin-top:22px;border:1px solid var(--line);border-radius:24px;padding:24px;background:#fafafa;display:none}.upload-panel.open{display:block}.upload-panel h3{margin:0 0 6px;font-size:20px}.hint{font-size:12px;color:var(--muted);line-height:1.8;margin:0 0 20px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:12px;color:#55555b}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);background:white;border-radius:12px;padding:11px 12px;outline:none;font-size:13px}.field textarea{min-height:82px;resize:vertical}.form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.danger{border-color:#e3b8b8;color:#a12a2a}.bottom{background:#111113;color:white;border-radius:34px;padding:55px;margin:70px auto 40px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}.bottom h2{font-size:clamp(32px,4vw,48px);letter-spacing:-.05em;line-height:1.15;margin:12px 0 16px}.bottom p{color:#b4b4bb;font-size:14px;line-height:1.8;margin:0;max-width:560px}.contact-box{border-left:1px solid #424247;padding-left:32px}.contact-box span{display:block;color:#a1a1a8;font-size:12px;margin:16px 0 8px}.contact-box a{font-size:16px;word-break:break-word}.contact-box .pill{margin-top:18px;color:white;border-color:#626269}footer{padding:22px 0 34px;color:#85858c;font-size:11px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#1d1d1f;color:white;padding:12px 18px;border-radius:999px;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:99}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:800px){.navlinks{gap:14px}.hero{padding:80px 0 58px}.hero-art{min-height:260px;margin-top:50px}.advantages{grid-template-columns:repeat(2,1fr)}.portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{align-items:start;flex-direction:column}.bottom{padding:36px;grid-template-columns:1fr}.contact-box{border-left:0;border-top:1px solid #424247;padding:24px 0 0}}
 @media(max-width:540px){.nav{height:58px}.nav-inner{padding:0 14px}.brand{font-size:13px}.brand span{display:none}.navlinks{gap:11px}.navlinks a{font-size:11px}.small-btn{padding:7px 9px;font-size:11px}.wrap{padding:0 17px}.hero{padding:68px 0 46px}.hero h1{font-size:46px}.hero p{font-size:15px}.hero-art{border-radius:24px;min-height:220px}.orb{width:70px;height:70px}.section{padding:52px 0}.advantages{grid-template-columns:1fr;gap:10px}.adv{min-height:175px;padding:23px}.metrics{grid-template-columns:repeat(2,1fr)}.metric{padding:19px 16px}.portfolio-section{padding:52px 0;border-radius:28px}.portfolio-grid{grid-template-columns:1fr;gap:14px}.work-media{aspect-ratio:16/9}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.upload-panel{padding:17px}.bottom{padding:28px 23px;margin:48px auto 25px;border-radius:27px}.contact-box{padding-top:18px}.contact-box a{font-size:14px}footer{font-size:10px}}
-</style></head><body>
-<header class="nav"><div class="nav-inner"><a class="brand" href="#top">李科乐<span>AI VIDEO CREATOR</span></a><nav class="navlinks"><a href="#strengths">个人优势</a><a href="#portfolio">作品集</a><a href="#contact">联系我</a></nav><a class="small-btn" href="/admin.html">管理员登录</a></div></header>
-<main id="top"><section class="hero wrap"><div class="eyebrow">AI VIDEO · CREATIVE · STORYTELLING</div><h1>让创意发生。<br><span class="gradient">让影像更有想象力。</span></h1><p>你好，我是李科乐。专注 AI 视频创作、短视频剪辑与内容策划，连接创意、工具与商业目标，把想法变成有表现力的视频内容。</p><div class="hero-cta"><a class="pill primary" href="#portfolio">探索我的作品 ↘</a><a class="pill" href="#strengths">了解我的优势</a></div><div class="hero-art"><div class="art-core"><div class="orb"></div><strong>Ideas into Motion.</strong><span>AI-POWERED VISUAL STORYTELLING</span></div></div></section>
-<section class="section wrap" id="strengths"><div class="section-head"><div><div class="kicker">01 — WHAT I DO</div><h2>不止于剪辑。<br>更关注完整的创作链路。</h2></div><p class="intro">从前期创意、AI 工具协作，到后期剪辑与数据复盘。我擅长把分散的想法和资源，组织成可执行、可交付的内容方案。</p></div><div class="advantages">
-<article class="adv"><span class="num">01 / PROJECT</span><div><h3>项目统筹与执行</h3><p>具备 AI 短剧项目统筹经验，参与市场分析、账号搭建、团队分工与进度管理，推动项目从构思走向发布。</p></div></article>
-<article class="adv"><span class="num">02 / AI WORKFLOW</span><div><h3>AI 工具与工作流</h3><p>使用 ChatGPT、DeepSeek 等大模型，结合 Vidu、星流等 AI 视频工具，串联素材准备、内容生成与后期剪辑。</p></div></article>
-<article class="adv"><span class="num">03 / CONTENT</span><div><h3>内容策划与叙事</h3><p>擅长脚本构思、热点观察、素材筛选与二次创作，兼顾画面表达、内容节奏和受众理解。</p></div></article>
-<article class="adv"><span class="num">04 / DATA</span><div><h3>市场洞察与优化</h3><p>结合平台数据分析受众反馈与素材表现，持续调整内容方向，理解创意表达与投放目标之间的关系。</p></div></article>
-<article class="adv"><span class="num">05 / EDITING</span><div><h3>多类型视频制作</h3><p>拥有四年以上视频剪辑经验，涉及企业宣传片、信息流广告、短剧素材、家居品牌内容及 AI 视频创作。</p></div></article>
-<article class="adv"><span class="num">06 / INTEGRATION</span><div><h3>资源整合与提效</h3><p>擅长信息检索、素材管理与工具组合，主动沉淀教程、技巧和解决方案，提升制作流程的稳定性与效率。</p></div></article></div>
-<div class="metrics"><div class="metric"><strong>90W+</strong><span>个人运营账号单条视频播放量</span></div><div class="metric"><strong>200+</strong><span>服务过的泛家居品牌</span></div><div class="metric"><strong>5000+</strong><span>参与短视频上新项目累计</span></div><div class="metric"><strong>4+ 年</strong><span>视频剪辑相关经验</span></div></div></section>
-<section class="portfolio-section" id="portfolio"><div class="wrap"><div class="section-head"><div><div class="kicker">02 — SELECTED WORKS</div><h2>作品集。<br>让作品自己说话。</h2></div><p class="intro">这里展示 AI 视频、商业短视频、短剧与内容创作项目。点击“作品管理”可自行添加、编辑与删除作品。</p></div><div class="portfolio-tools" id="filters"><button class="filter active" data-filter="全部">全部作品</button><button class="filter" data-filter="AI视频">AI 视频</button><button class="filter" data-filter="商业短视频">商业短视频</button><button class="filter" data-filter="短剧/叙事">短剧 / 叙事</button><button class="filter" data-filter="其他">其他</button></div><div class="portfolio-grid" id="portfolioGrid" style="margin-top:22px"></div>
+
+
+/* Refined Apple-inspired palette: warm ivory, charcoal, muted terracotta */
+:root{--bg:#faf8f5;--ink:#22211f;--muted:#77716b;--line:#e7e0d9;--accent:#c87552;--max:1180px}
+html{scroll-behavior:smooth}
+body{background:#faf8f5;color:#22211f;letter-spacing:-.012em}
+.nav{background:rgba(250,248,245,.88);backdrop-filter:saturate(150%) blur(18px);border-bottom:1px solid rgba(34,33,31,.08)}
+.navlinks{color:#4b4641}
+.brand,.navlinks a{color:#22211f}
+.eyebrow,.kicker{color:#82786f}
+.gradient{background:linear-gradient(100deg,#22211f 8%,#7a6257 58%,#c87552 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p,.intro,.adv p,.metric span,.work-info p,.bottom p{color:#625d57}
+.primary,.pill.primary,.filter.active{background:#c87552!important;border-color:#c87552!important;color:#fff!important}
+.primary:hover,.pill.primary:hover,.filter.active:hover{background:#b56747!important;border-color:#b56747!important}
+.small-btn,.pill,.filter{background:#fffdfb;color:#292623;border:1px solid #e3d9d0}
+.small-btn:hover,.pill:hover,.filter:hover{background:#f4ece5;border-color:#c87552}
+.hero-art{background:linear-gradient(140deg,#e8d8ca 0%,#c87552 100%);color:#fff;box-shadow:none}
+.hero-art:before,.hero-art:after{border-color:rgba(255,255,255,.6)}
+.orb{background:#fffaf5;box-shadow:none}
+.art-core,.art-core strong,.art-core span{color:#fff}
+.adv,.metric,.work-card,.work-media,.empty,.upload-panel{background:#fffdfb;color:#22211f;border:1px solid #eee7e0;box-shadow:0 8px 28px rgba(60,42,30,.035)}
+.metrics{background:#f0e7df;border:1px solid #f0e7df}
+.work-media{background:#f6f0ea}
+.placeholder,.placeholder strong{color:#4a433d}
+.play,.tag{background:#c87552;color:#fff}
+.bottom{background:#282522;color:#fff;box-shadow:none}
+.bottom h2,.bottom p,.contact-box a,.contact-box span{color:#fff}
+.contact-box{border-color:rgba(255,255,255,.45)}
+.contact-box .pill{background:#fffaf5;color:#292623;border-color:#fffaf5}
+.toast{background:#282522;color:#fff;box-shadow:none}
+.field input,.field textarea,.field select{background:#fffdfb;color:#22211f;border:1px solid #e3d9d0}
+.field input:focus,.field textarea:focus,.field select:focus{outline:2px solid #c87552;border-color:#c87552}
+.empty{border-style:dashed}
+@media(max-width:540px){.hero h1{color:#22211f}.hero{padding-top:58px}.navlinks a{color:#22211f}}
+
+</style>
+<style id="blue-aesthetic-theme">
+:root { --blue: #3569A8; }
+a:hover, .navlinks a:hover { color: #285487; }
+.primary { background: #3569A8; border-color: #3569A8; color: #fff; }
+.primary:hover { background: #285487; border-color: #285487; }
+.small-btn:hover { background: #EAF1F8; }
+::selection { background: #DCE9F7; color: #1E3550; }
+</style>
+
+
+<style id="workflow-redesign">
+.hero-art {
+  min-height: 0 !important;
+  padding: clamp(24px, 4vw, 42px) clamp(18px, 4vw, 42px) 34px;
+  display: block !important;
+  text-align: left;
+  color: #20354f;
+  background: linear-gradient(135deg, #f4f8fd 0%, #e8f0fa 55%, #f8fbff 100%) !important;
+  border: 1px solid #dce7f4;
+  box-shadow: 0 18px 55px rgba(42, 82, 132, .08);
+  border-radius: 28px;
+}
+.hero-art:before, .hero-art:after { display: none !important; }
+.process-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; margin-bottom: 30px;
+}
+.process-label {
+  color: #5378a6; font-size: 11px; font-weight: 750; letter-spacing: 2.2px;
+}
+.process-note { color: #657991; font-size: 12px; letter-spacing: .02em; }
+.process-flow {
+  display: grid; grid-template-columns: 1fr 54px 1fr 54px 1fr;
+  align-items: center; gap: 8px;
+}
+.process-step {
+  position: relative; min-height: 154px; padding: 20px 20px 18px;
+  border-radius: 19px; background: rgba(255,255,255,.82);
+  border: 1px solid rgba(115,146,184,.18);
+  box-shadow: 0 8px 24px rgba(35,67,105,.04);
+}
+.process-step.featured {
+  background: #315f96; color: white;
+  border-color: #315f96; box-shadow: 0 12px 28px rgba(49,95,150,.18);
+  transform: translateY(-7px);
+}
+.process-index { display: block; color: #8ba5c4; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; }
+.featured .process-index { color: #c7d9ee; }
+.process-icon {
+  width: 34px; height: 34px; margin: 13px 0 12px; display: grid; place-items: center;
+  border-radius: 11px; background: #eaf1fa; color: #3569a8; font-size: 19px;
+}
+.featured .process-icon { background: rgba(255,255,255,.16); color: white; }
+.process-step h3 { margin: 0 0 7px; font-size: 18px; letter-spacing: -.4px; }
+.process-step p { margin: 0; color: #75869a; font-size: 12px; line-height: 1.65; }
+.featured p { color: #dce8f6; }
+.process-connector { height: 1px; background: #a9bfd9; position: relative; }
+.process-connector:after {
+  content: ""; position: absolute; right: 0; top: -3px; width: 6px; height: 6px;
+  border-top: 1px solid #7e9fc5; border-right: 1px solid #7e9fc5; transform: rotate(45deg);
+}
+@media(max-width:640px) {
+  .hero-art { padding: 22px 16px 18px; border-radius: 22px; }
+  .process-head { align-items: flex-start; flex-direction: column; gap: 7px; margin-bottom: 19px; }
+  .process-flow { grid-template-columns: 1fr; gap: 9px; }
+  .process-step { min-height: 0; padding: 15px 16px; display: grid; grid-template-columns: 32px 42px 1fr; align-items: center; column-gap: 10px; }
+  .process-index { grid-row: 1 / span 2; align-self: start; padding-top: 5px; }
+  .process-icon { margin: 0; grid-column: 2; grid-row: 1 / span 2; }
+  .process-step h3 { grid-column: 3; grid-row: 1; font-size: 16px; }
+  .process-step p { grid-column: 3; grid-row: 2; font-size: 11px; }
+  .process-step.featured { transform: none; }
+  .process-connector { width: 1px; height: 12px; margin-left: 31px; }
+  .process-connector:after { right: -3px; top: 4px; transform: rotate(135deg); }
+}
+</style>
+
+
+<style id="unified-blue-theme">
+:root {
+  --blue: #3569A8 !important;
+  --accent: #3569A8 !important;
+  --accent-hover: #285487 !important;
+  --orange: #3569A8 !important;
+  --primary: #3569A8 !important;
+  --primary-color: #3569A8 !important;
+  --warm: #3569A8 !important;
+}
+body { accent-color: #3569A8; }
+a, .accent, .eyebrow, .tagline, .highlight, .text-accent { color: #3569A8; }
+button, .btn, .button, .primary, .cta, [type="submit"] {
+  background-color: #3569A8;
+  border-color: #3569A8;
+}
+button:hover, .btn:hover, .button:hover, .primary:hover, .cta:hover, [type="submit"]:hover {
+  background-color: #285487;
+  border-color: #285487;
+}
+.badge, .chip, .tag, .pill, .label-accent {
+  color: #315F96;
+  background-color: #EAF1F8;
+  border-color: #D4E2F2;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #7FA7D4;
+  box-shadow: 0 0 0 3px rgba(53,105,168,.12);
+}
+::selection { background: #DCE9F7; color: #1E3550; }
+/* Consistent blue-tinted surfaces and decorative accents */
+.hero-art, .process-step.featured {
+  background-color: #315F96 !important;
+}
+
+/* Orange utility classes, if present in older sections */
+.orange, .orange-text, .orange-bg, .text-orange, .bg-orange,
+[style*="#35699B"], [style*="#35699B"] {
+  color: #3569A8 !important;
+  background-color: #EAF1F8 !important;
+  border-color: #3569A8 !important;
+}
+</style>
+
+<style id="strict-swatch-only">
+:root {
+  --blue: #35699B !important;
+  --accent: #35699B !important;
+  --accent-hover: #073767 !important;
+  --primary: #35699B !important;
+  --primary-color: #35699B !important;
+  --orange: #35699B !important;
+  --yellow: #FFD06A !important;
+  --navy: #073767 !important;
+  --text: #073767 !important;
+  --muted: #073767 !important;
+}
+/* Restrict all text to the supplied swatch palette */
+html, body, p, li, small, label, dt, dd, blockquote,
+h1, h2, h3, h4, h5, h6, strong, em, b, i, span, div, a {
+  color: #073767;
+}
+body { background: #FFFFFF !important; accent-color: #35699B !important; }
+a, .accent, .eyebrow, .highlight, .text-accent { color: #35699B !important; }
+button, .btn, .button, .primary, .cta, [type="submit"] {
+  color: #FFFFFF !important;
+  background: #35699B !important;
+  border-color: #35699B !important;
+}
+button:hover, .btn:hover, .button:hover, .primary:hover, .cta:hover, [type="submit"]:hover {
+  color: #FFFFFF !important;
+  background: #073767 !important;
+  border-color: #073767 !important;
+}
+.hero-art {
+  background: linear-gradient(135deg, #35699B 0%, #073767 100%) !important;
+  color: #FFFFFF !important;
+  border-color: #35699B !important;
+}
+.hero-art *, .process-step.featured, .process-step.featured * {
+  color: #FFFFFF !important;
+}
+.process-step {
+  background: #FFFFFF !important;
+  border-color: #35699B !important;
+}
+.process-step.featured {
+  background: #35699B !important;
+  border-color: #35699B !important;
+}
+.process-icon { color: #073767 !important; background: #FFD06A !important; }
+.featured .process-icon { color: #073767 !important; background: #FFFFFF !important; }
+.badge, .chip, .tag, .pill, .label-accent {
+  color: #073767 !important;
+  background: #FFD06A !important;
+  border-color: #FFD06A !important;
+}
+input, textarea, select {
+  color: #073767 !important;
+  background: #FFFFFF !important;
+  border-color: #35699B !important;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #35699B !important;
+  box-shadow: 0 0 0 2px #FFD06A !important;
+}
+::selection { background: #FFD06A !important; color: #073767 !important; }
+/* Catch legacy orange utility classes and inline styles */
+[class*="orange"], [class*="Orange"], [class*="accent-orange"],
+[style*="#35699B"], [style*="#35699B"], [style*="#35699B"], [style*="#35699B"],
+[style*="orange"], [style*="rgb(243, 107, 33)"] {
+  color: #35699B !important;
+  background-color: #FFFFFF !important;
+  border-color: #35699B !important;
+}
+/* Remove old orange color literals from stylesheet declarations */
+</style>
+
+
+<style id="final-contrast-and-palette-fix">
+/* Use only the four supplied swatch colors; fix the remaining orange CTA and headline gradient. */
+:root {
+  --blue: #35699B !important;
+  --accent: #35699B !important;
+  --accent-hover: #073767 !important;
+  --orange: #35699B !important;
+  --yellow: #FFD06A !important;
+}
+/* Hero headline: blue emphasis, never orange */
+.gradient {
+  background: linear-gradient(90deg, #35699B 0%, #073767 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #35699B !important;
+}
+/* CTA buttons */
+.hero-cta .pill.primary,
+.hero-cta a.pill.primary,
+a.pill.primary {
+  background: #35699B !important;
+  background-image: none !important;
+  color: #FFFFFF !important;
+  border: 1px solid #35699B !important;
+  box-shadow: none !important;
+}
+.hero-cta .pill.primary:hover,
+.hero-cta a.pill.primary:hover,
+a.pill.primary:hover {
+  background: #073767 !important;
+  background-image: none !important;
+  color: #FFFFFF !important;
+  border-color: #073767 !important;
+}
+/* Second CTA: palette yellow with deep navy text for legibility */
+.hero-cta .pill:not(.primary),
+.hero-cta a.pill:not(.primary) {
+  background: #FFD06A !important;
+  background-image: none !important;
+  color: #073767 !important;
+  border-color: #FFD06A !important;
+}
+/* Workflow cards: only the blue featured card uses white text.
+   The white cards must use navy text, so their labels don't disappear. */
+.hero-art { color: #FFFFFF !important; }
+.hero-art .process-head .process-label,
+.hero-art .process-head .process-note { color: #FFFFFF !important; }
+.hero-art .process-step:not(.featured) {
+  background: #FFFFFF !important;
+  color: #073767 !important;
+  border-color: #35699B !important;
+}
+.hero-art .process-step:not(.featured) .process-index,
+.hero-art .process-step:not(.featured) h3,
+.hero-art .process-step:not(.featured) p {
+  color: #073767 !important;
+}
+.hero-art .process-step.featured,
+.hero-art .process-step.featured .process-index,
+.hero-art .process-step.featured h3,
+.hero-art .process-step.featured p {
+  color: #FFFFFF !important;
+}
+.hero-art .process-icon {
+  color: #073767 !important;
+  background: #FFD06A !important;
+}
+.hero-art .process-step.featured .process-icon {
+  color: #073767 !important;
+  background: #FFFFFF !important;
+}
+/* Catch remaining legacy orange rules on links and buttons */
+a, .accent, .eyebrow, .highlight, .text-accent { color: #35699B; }
+button, .btn, .button, .primary, .cta, [type="submit"] {
+  background-color: #35699B !important;
+  border-color: #35699B !important;
+}
+</style>
+
+
+<style id="portfolio-filter-blue-fix">
+/* Portfolio category tabs: active tab also uses the swatch blue, never orange. */
+#filters .filter,
+.portfolio-tools .filter,
+button.filter {
+  background: #FFFFFF !important;
+  color: #35699B !important;
+  border: 1px solid #35699B !important;
+  box-shadow: none !important;
+}
+#filters .filter.active,
+.portfolio-tools .filter.active,
+button.filter.active,
+#filters .filter[aria-selected="true"] {
+  background: #35699B !important;
+  color: #FFFFFF !important;
+  border-color: #35699B !important;
+}
+#filters .filter:hover,
+.portfolio-tools .filter:hover,
+button.filter:hover {
+  background: #EAF1F7 !important;
+  color: #073767 !important;
+  border-color: #35699B !important;
+}
+</style>
+
+
+<style id="mobile-spacing-refinement">
+/* Mobile refinement: reduce side pressure, card height and oversized spacing. */
+@media (max-width: 640px) {
+  .wrap, .container, .section, section.section {
+    width: auto !important;
+    max-width: 100% !important;
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  }
+  .section { padding-top: 34px !important; padding-bottom: 34px !important; }
+  .hero { padding: 36px 16px 26px !important; }
+  .hero h1 { font-size: clamp(30px, 8vw, 40px) !important; line-height: 1.12 !important; letter-spacing: -1.1px !important; }
+  .hero p, .intro { font-size: 14px !important; line-height: 1.75 !important; }
+  .hero-cta { gap: 8px !important; margin-top: 16px !important; flex-wrap: wrap !important; }
+  .hero-cta .pill { min-height: 40px !important; padding: 10px 14px !important; font-size: 13px !important; }
+  .hero-art {
+    margin-top: 22px !important;
+    padding: 20px 14px 18px !important;
+    border-radius: 20px !important;
+  }
+  .process-head { margin-bottom: 16px !important; gap: 5px !important; }
+  .process-label { font-size: 10px !important; letter-spacing: 1.5px !important; }
+  .process-note { font-size: 11px !important; line-height: 1.5 !important; }
+  .process-flow { gap: 7px !important; }
+  .process-step {
+    min-height: 0 !important;
+    padding: 12px 13px !important;
+    border-radius: 15px !important;
+    grid-template-columns: 24px 34px minmax(0, 1fr) !important;
+    column-gap: 8px !important;
+  }
+  .process-icon { width: 30px !important; height: 30px !important; border-radius: 9px !important; font-size: 16px !important; }
+  .process-step h3 { font-size: 15px !important; line-height: 1.35 !important; margin-bottom: 3px !important; }
+  .process-step p { font-size: 10px !important; line-height: 1.45 !important; overflow-wrap: anywhere !important; }
+  .process-connector { height: 9px !important; margin-left: 23px !important; }
+  .section-head { gap: 10px !important; margin-bottom: 18px !important; }
+  .section-head h2, .section h2 { font-size: clamp(24px, 6.4vw, 30px) !important; line-height: 1.2 !important; letter-spacing: -.6px !important; }
+  .section-head .intro { font-size: 13px !important; }
+  .advantages { gap: 8px !important; }
+  .advantage, .advantage-card, .feature-card {
+    padding: 18px 15px !important;
+    border-radius: 17px !important;
+    min-height: 0 !important;
+  }
+  .advantage h3, .advantage-card h3, .feature-card h3 { font-size: 17px !important; line-height: 1.4 !important; }
+  .advantage p, .advantage-card p, .feature-card p { font-size: 13px !important; line-height: 1.7 !important; }
+  .stats, .stats-grid, .metrics-grid {
+    gap: 0 !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .stat, .stat-card, .metric {
+    padding: 16px 12px !important;
+    min-width: 0 !important;
+  }
+  .stat strong, .stat-card strong, .metric strong { font-size: 23px !important; }
+  .stat p, .stat-card p, .metric p { font-size: 11px !important; line-height: 1.55 !important; }
+  .contact, .contact-section, .contact-box, footer .wrap {
+    padding: 22px 16px !important;
+    border-radius: 20px !important;
+  }
+  .contact h2, .contact-section h2, footer h2 { font-size: 27px !important; line-height: 1.2 !important; }
+  .contact p, .contact-section p, .contact-box p { font-size: 13px !important; line-height: 1.7 !important; }
+  .contact-box { min-width: 0 !important; overflow-wrap: anywhere !important; }
+  .contact-box a { overflow-wrap: anywhere !important; }
+  .portfolio-tools { gap: 7px !important; flex-wrap: wrap !important; }
+  .portfolio-tools .filter, #filters .filter, button.filter {
+    padding: 9px 12px !important;
+    font-size: 12px !important;
+    min-height: 34px !important;
+  }
+}
+@media (max-width: 380px) {
+  .wrap, .container, .section, section.section { margin-left: 9px !important; margin-right: 9px !important; }
+  .hero { padding-left: 13px !important; padding-right: 13px !important; }
+  .process-step { padding: 10px !important; column-gap: 6px !important; }
+  .process-step h3 { font-size: 14px !important; }
+  .process-step p { font-size: 9px !important; }
+}
+</style>
+
+
+<style id="contact-divider-refinement-v2">
+/* The line is the contact box's desktop left border, which becomes a full-width divider on mobile.
+   Remove it entirely for a cleaner contact panel. */
+#contact .contact-box {
+  border-left: 0 !important;
+  border-top: 0 !important;
+  padding-left: 0 !important;
+  padding-top: 0 !important;
+}
+@media (max-width: 640px) {
+  #contact .contact-box {
+    border-left: 0 !important;
+    border-top: 0 !important;
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+    margin-top: 6px !important;
+  }
+}
+</style>
+
+
+<style id="mobile-uniform-side-alignment">
+/* Mobile layout: consistent horizontal gutters and parallel left/right edges across sections. */
+@media (max-width: 640px) {
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  body { margin: 0 !important; }
+  .wrap, .container, .section, section.section,
+  #about, #work, #portfolio, #stats, #contact,
+  .hero, .hero-art, footer {
+    box-sizing: border-box !important;
+    width: calc(100% - 24px) !important;
+    max-width: calc(100% - 24px) !important;
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  }
+  /* Don't double-apply outer margins to nested content wrappers. */
+  .section .wrap, section.section .container,
+  #about .wrap, #work .wrap, #portfolio .wrap,
+  #stats .wrap, #contact .wrap, footer .wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  /* Shared radius and predictable box sizing for all primary cards. */
+  *, *::before, *::after { box-sizing: border-box; }
+  .hero-art, .advantage, .advantage-card, .feature-card,
+  .stat, .stat-card, .metric, .contact, .contact-section, .contact-box {
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  .hero-art { border-radius: 20px !important; }
+  .advantage, .advantage-card, .feature-card,
+  .stat, .stat-card, .metric { border-radius: 16px !important; }
+  .contact, .contact-section, .contact-box, footer .wrap {
+    border-radius: 20px !important;
+  }
+  /* Avoid cards extending beyond their parent due to grid/flex min-content sizing. */
+  .process-flow, .advantages, .stats, .stats-grid, .metrics-grid,
+  .portfolio-grid, .works-grid, .contact-grid {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  img, video, iframe { max-width: 100% !important; }
+}
+</style>
+
+
+<style id="mobile-three-section-alignment">
+/* Align the three mobile sections to one shared content grid. */
+@media (max-width: 640px) {
+  #about, #work, #contact,
+  section#about, section#work, section#contact {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  #about .wrap, #work .wrap, #contact .wrap,
+  #about .container, #work .container, #contact .container,
+  #about .section-inner, #work .section-inner, #contact .section-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+    box-sizing: border-box !important;
+  }
+  #about .section-head, #work .section-head,
+  #about .section-title, #work .section-title,
+  #about h1, #about h2, #work h1, #work h2,
+  #about p, #work p {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+  #contact .contact-box, #contact .contact-inner,
+  #contact .contact-content, #contact .contact-info {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+  /* Keep contact copy on the same left grid as the two light sections. */
+  #contact .contact-box {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  #contact .contact-box > *,
+  #contact .contact-content > *,
+  #contact .contact-info > * {
+    margin-left: 0 !important;
+  }
+}
+</style>
+
+
+<style id="mobile-three-section-inset-adjustment">
+/* Slightly bring the three sections' content inward while keeping their left edges aligned. */
+@media (max-width: 640px) {
+  #about .wrap, #work .wrap, #contact .wrap,
+  #about .container, #work .container, #contact .container,
+  #about .section-inner, #work .section-inner, #contact .section-inner {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+}
+@media (max-width: 380px) {
+  #about .wrap, #work .wrap, #contact .wrap,
+  #about .container, #work .container, #contact .container,
+  #about .section-inner, #work .section-inner, #contact .section-inner {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+</style>
+
+
+<style id="mobile-align-three-sections-to-work">
+@media (max-width: 640px) {
+  /* Align all three section content blocks to the same left/right inset as Selected Works. */
+  #about, #work, #contact,
+  section#about, section#work, section#contact {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  #about .wrap, #work .wrap, #contact .wrap,
+  #about .container, #work .container, #contact .container,
+  #about .section-inner, #work .section-inner, #contact .section-inner {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+  /* Ensure headings and paragraphs inherit the same content edge. */
+  #about .section-head, #work .section-head,
+  #about .section-title, #work .section-title,
+  #about h1, #about h2, #about h3, #about p,
+  #work h1, #work h2, #work h3, #work p,
+  #contact h1, #contact h2, #contact h3, #contact p {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+  /* Contact card itself stays inset consistently; its contents must not be clipped at the screen edge. */
+  #contact .contact, #contact .contact-section, #contact .contact-box,
+  #contact .contact-content, #contact .contact-info {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  #contact .contact-box,
+  #contact .contact-content,
+  #contact .contact-info {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+@media (max-width: 380px) {
+  #about .wrap, #work .wrap, #contact .wrap,
+  #about .container, #work .container, #contact .container,
+  #about .section-inner, #work .section-inner, #contact .section-inner {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}
+</style>
+
+
+<style id="workflow-alignment-fix">
+/* Desktop workflow: align the three cards and arrows to one common horizontal centerline. */
+.hero-art .process-flow,
+.process-flow {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+}
+.hero-art .process-step,
+.process-flow .process-step {
+  box-sizing: border-box !important;
+  width: 144px !important;
+  min-width: 144px !important;
+  max-width: 144px !important;
+  min-height: 164px !important;
+  height: 164px !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding: 20px !important;
+}
+.hero-art .process-step .process-index,
+.process-flow .process-step .process-index {
+  margin: 0 0 12px !important;
+  line-height: 1 !important;
+}
+.hero-art .process-step .process-icon,
+.process-flow .process-step .process-icon {
+  flex: 0 0 34px !important;
+  width: 34px !important;
+  height: 34px !important;
+  margin: 0 0 12px !important;
+}
+.hero-art .process-step h3,
+.process-flow .process-step h3 {
+  margin: 0 0 6px !important;
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+}
+.hero-art .process-step p,
+.process-flow .process-step p {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+  white-space: nowrap !important;
+  font-size: 12px !important;
+}
+.hero-art .process-connector,
+.process-flow .process-connector {
+  flex: 0 0 50px !important;
+  width: 50px !important;
+  height: 1px !important;
+  margin: 0 !important;
+  align-self: center !important;
+  position: relative !important;
+}
+.hero-art .process-connector::after,
+.process-flow .process-connector::after {
+  content: "›" !important;
+  position: absolute !important;
+  right: -1px !important;
+  top: 50% !important;
+  transform: translateY(-55%) !important;
+  font-size: 22px !important;
+  line-height: 1 !important;
+}
+@media (max-width: 640px) {
+  .hero-art .process-flow,
+  .process-flow {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 7px !important;
+  }
+  .hero-art .process-step,
+  .process-flow .process-step {
+    width: min(100%, 230px) !important;
+    min-width: 0 !important;
+    max-width: 230px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    display: grid !important;
+    grid-template-columns: 24px 34px minmax(0, 1fr) !important;
+    align-items: center !important;
+    padding: 12px !important;
+    gap: 7px !important;
+  }
+  .hero-art .process-step .process-index,
+  .process-flow .process-step .process-index { margin: 0 !important; }
+  .hero-art .process-step .process-icon,
+  .process-flow .process-step .process-icon { margin: 0 !important; }
+  .hero-art .process-step h3,
+  .process-flow .process-step h3 { white-space: normal !important; margin: 0 0 3px !important; }
+  .hero-art .process-step p,
+  .process-flow .process-step p { white-space: normal !important; font-size: 10px !important; }
+  .hero-art .process-connector,
+  .process-flow .process-connector {
+    flex: 0 0 12px !important;
+    width: 1px !important;
+    height: 12px !important;
+    border-top: 0 !important;
+    align-self: center !important;
+  }
+  .hero-art .process-connector::after,
+  .process-flow .process-connector::after {
+    content: "↓" !important;
+    right: auto !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    font-size: 13px !important;
+  }
+}
+</style>
+
+
+<style id="desktop-portfolio-heading-match-strengths">
+/* Desktop: make Selected Works use the same scale and two-column heading layout as What I Do. */
+@media (min-width: 900px) {
+  .portfolio-section > .wrap {
+    width: 100% !important;
+    max-width: 1280px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .portfolio-section .section-head {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    gap: 24px !important;
+    margin-bottom: 32px !important;
+  }
+  .portfolio-section .section-head > div {
+    flex: 1 1 55% !important;
+    min-width: 0 !important;
+  }
+  .portfolio-section .section-head h2 {
+    font-size: clamp(34px, 5vw, 56px) !important;
+    letter-spacing: -.055em !important;
+    line-height: 1.1 !important;
+    margin: 12px 0 0 !important;
+    font-weight: 700 !important;
+  }
+  .portfolio-section .section-head .intro {
+    flex: 0 1 410px !important;
+    max-width: 410px !important;
+    margin: 0 0 2px auto !important;
+    font-size: 14px !important;
+    line-height: 1.8 !important;
+    text-align: left !important;
+  }
+}
+</style>
+
+
+<style id="workflow-card-alignment-and-heading-size">
+/* Workflow desktop: equalize card heights and vertically center all three cards. */
+@media (min-width: 641px) {
+  .hero-art .process-flow,
+  .process-flow {
+    align-items: center !important;
+  }
+  .hero-art .process-step,
+  .process-flow .process-step {
+    box-sizing: border-box !important;
+    height: 164px !important;
+    min-height: 164px !important;
+    max-height: 164px !important;
+    align-self: center !important;
+  }
+  .hero-art .process-connector,
+  .process-flow .process-connector {
+    align-self: center !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  .hero-art .process-head,
+  .process-head {
+    display: flex !important;
+    align-items: baseline !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px 18px !important;
+    margin-bottom: 22px !important;
+    text-align: center !important;
+  }
+  .hero-art .process-label,
+  .process-label {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    letter-spacing: 2px !important;
+  }
+  .hero-art .process-note,
+  .process-note {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    font-weight: 600 !important;
+  }
+}
+@media (max-width: 640px) {
+  .hero-art .process-label,
+  .process-label {
+    font-size: 11px !important;
+  }
+  .hero-art .process-note,
+  .process-note {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+  }
+}
+</style>
+
+
+<style id="mobile-about-match-selected-works">
+@media (max-width: 640px) {
+  /* Make the first section heading follow the Selected Works section's mobile typography and spacing. */
+  #about .section-head,
+  section#about .section-head {
+    display: block !important;
+    margin-bottom: 22px !important;
+  }
+  #about .section-head .eyebrow,
+  #about .eyebrow,
+  section#about .eyebrow {
+    margin-bottom: 22px !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    letter-spacing: 1.8px !important;
+  }
+  #about .section-head h2,
+  #about h2,
+  section#about .section-head h2 {
+    font-size: clamp(28px, 7.1vw, 34px) !important;
+    line-height: 1.22 !important;
+    letter-spacing: -0.035em !important;
+    font-weight: 700 !important;
+    margin: 0 0 0 !important;
+    max-width: 100% !important;
+  }
+  #about .section-head .intro,
+  #about .intro,
+  section#about .section-head .intro {
+    margin-top: 44px !important;
+    font-size: 13px !important;
+    line-height: 1.8 !important;
+    max-width: 100% !important;
+    text-align: left !important;
+  }
+}
+</style>
+
+
+<style id="mobile-about-slightly-inward">
+@media (max-width: 640px) {
+  /* Nudge the first section content slightly inward without changing its alignment style. */
+  #about .wrap,
+  #about .container,
+  #about .section-inner {
+    padding-left: 26px !important;
+    padding-right: 26px !important;
+  }
+}
+@media (max-width: 380px) {
+  #about .wrap,
+  #about .container,
+  #about .section-inner {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+}
+</style>
+
+
+<style id="mobile-about-cards-align-text">
+@media (max-width: 640px) {
+  /* Align all text within the three feature cards to a consistent top baseline. */
+  #about .advantage-card,
+  #about .feature-card,
+  #about .strength-card,
+  #about .capability-card,
+  #about .card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+  #about .advantage-card .eyebrow,
+  #about .feature-card .eyebrow,
+  #about .strength-card .eyebrow,
+  #about .capability-card .eyebrow,
+  #about .card .eyebrow {
+    margin-top: 0 !important;
+    margin-bottom: 22px !important;
+    line-height: 1.4 !important;
+  }
+  #about .advantage-card h3,
+  #about .feature-card h3,
+  #about .strength-card h3,
+  #about .capability-card h3,
+  #about .card h3 {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+    line-height: 1.35 !important;
+  }
+  #about .advantage-card p,
+  #about .feature-card p,
+  #about .strength-card p,
+  #about .capability-card p,
+  #about .card p {
+    margin-top: 0 !important;
+    line-height: 1.8 !important;
+  }
+}
+</style>
+
+
+<style id="mobile-contact-card-symmetric-padding">
+@media (max-width: 640px) {
+  /* Give the dark contact panel balanced, symmetric inner spacing on mobile. */
+  #contact,
+  section#contact {
+    box-sizing: border-box !important;
+    width: calc(100% - 28px) !important;
+    max-width: calc(100% - 28px) !important;
+    margin-left: 14px !important;
+    margin-right: 14px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  #contact .wrap,
+  #contact .container,
+  #contact .section-inner {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  #contact .contact-box,
+  #contact .contact-content,
+  #contact .contact-info {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  #contact h1, #contact h2, #contact h3,
+  #contact p, #contact .eyebrow, #contact label,
+  #contact a, #contact button {
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+  }
+}
+@media (max-width: 380px) {
+  #contact,
+  section#contact {
+    width: calc(100% - 24px) !important;
+    max-width: calc(100% - 24px) !important;
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+</style>
+
+
+<style id="mobile-about-align-with-first-card">
+@media (max-width: 640px) {
+  /* Match the intro block's left/right content edges to the feature cards below. */
+  #about > .wrap,
+  #about > .container,
+  #about > .section-inner,
+  section#about > .wrap,
+  section#about > .container,
+  section#about > .section-inner {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  #about .section-head {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  #about .section-head .eyebrow,
+  #about .section-head h1,
+  #about .section-head h2,
+  #about .section-head .intro,
+  #about .section-head p {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+  }
+}
+</style>
+
+
+<style id="mobile-about-intro-nudge-right">
+@media (max-width: 640px) {
+  /* Nudge the About intro content a little to the right, preserving consistent alignment. */
+  #about > .wrap,
+  #about > .container,
+  #about > .section-inner,
+  section#about > .wrap,
+  section#about > .container,
+  section#about > .section-inner {
+    padding-left: 22px !important;
+    padding-right: 14px !important;
+  }
+}
+@media (max-width: 380px) {
+  #about > .wrap,
+  #about > .container,
+  #about > .section-inner,
+  section#about > .wrap,
+  section#about > .container,
+  section#about > .section-inner {
+    padding-left: 20px !important;
+    padding-right: 12px !important;
+  }
+}
+</style>
+
+
+<style id="mobile-about-text-only-nudge">
+@media (max-width: 640px) {
+  /* Move only the text content to the right; keep section/card edges unchanged. */
+  #about .section-head .eyebrow,
+  #about .section-head h1,
+  #about .section-head h2,
+  #about .section-head .intro,
+  #about .section-head p {
+    transform: translateX(8px) !important;
+  }
+}
+@media (max-width: 380px) {
+  #about .section-head .eyebrow,
+  #about .section-head h1,
+  #about .section-head h2,
+  #about .section-head .intro,
+  #about .section-head p {
+    transform: translateX(6px) !important;
+  }
+}
+</style>
+
+
+<style id="mobile-about-text-nudge-force-v2">
+@media screen and (max-width: 768px) {
+  #about .section-head .eyebrow,
+  #about .section-head h1,
+  #about .section-head h2,
+  #about .section-head .intro,
+  #about .section-head p,
+  section#about .section-head .eyebrow,
+  section#about .section-head h1,
+  section#about .section-head h2,
+  section#about .section-head .intro,
+  section#about .section-head p {
+    position: relative !important;
+    left: 12px !important;
+    transform: none !important;
+    width: calc(100% - 12px) !important;
+    max-width: calc(100% - 12px) !important;
+    box-sizing: border-box !important;
+  }
+}
+@media screen and (max-width: 380px) {
+  #about .section-head .eyebrow,
+  #about .section-head h1,
+  #about .section-head h2,
+  #about .section-head .intro,
+  #about .section-head p,
+  section#about .section-head .eyebrow,
+  section#about .section-head h1,
+  section#about .section-head h2,
+  section#about .section-head .intro,
+  section#about .section-head p {
+    left: 9px !important;
+    width: calc(100% - 9px) !important;
+    max-width: calc(100% - 9px) !important;
+  }
+}
+</style>
+
+
+<style id="desktop-about-heading-match-selected-works">
+@media screen and (min-width: 769px) {
+  /* Match the first section's main heading to the Selected Works heading scale. */
+  #about .section-head h1,
+  #about .section-head h2,
+  section#about .section-head h1,
+  section#about .section-head h2 {
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.035em !important;
+    font-weight: 700 !important;
+  }
+}
+</style>
+
+
+<style id="mobile-about-text-shift-right-final">
+@media screen and (max-width: 768px) {
+  #about .section-head .eyebrow,
+  #about .section-head h1,
+  #about .section-head h2,
+  #about .section-head .intro,
+  #about .section-head p,
+  section#about .section-head .eyebrow,
+  section#about .section-head h1,
+  section#about .section-head h2,
+  section#about .section-head .intro,
+  section#about .section-head p {
+    margin-left: 12px !important;
+    width: calc(100% - 12px) !important;
+    max-width: calc(100% - 12px) !important;
+    position: static !important;
+    transform: none !important;
+    box-sizing: border-box !important;
+  }
+}
+@media screen and (max-width: 380px) {
+  #about .section-head .eyebrow,
+  #about .section-head h1,
+  #about .section-head h2,
+  #about .section-head .intro,
+  #about .section-head p,
+  section#about .section-head .eyebrow,
+  section#about .section-head h1,
+  section#about .section-head h2,
+  section#about .section-head .intro,
+  section#about .section-head p {
+    margin-left: 9px !important;
+    width: calc(100% - 9px) !important;
+    max-width: calc(100% - 9px) !important;
+  }
+}
+</style>
+
+
+<style id="strengths-mobile-text-shift-correct-selector">
+@media screen and (max-width: 768px) {
+  /* Actual section id is #strengths. Shift the heading column and description only. */
+  #strengths .section-head > div:first-child {
+    position: relative !important;
+    left: 14px !important;
+  }
+  #strengths .section-head > .intro,
+  #strengths .section-head > p.intro {
+    position: relative !important;
+    left: 14px !important;
+    width: calc(100% - 14px) !important;
+    max-width: calc(100% - 14px) !important;
+  }
+}
+@media screen and (max-width: 380px) {
+  #strengths .section-head > div:first-child {
+    left: 10px !important;
+  }
+  #strengths .section-head > .intro,
+  #strengths .section-head > p.intro {
+    left: 10px !important;
+    width: calc(100% - 10px) !important;
+    max-width: calc(100% - 10px) !important;
+  }
+}
+</style>
+
+
+<style id="workflow-equal-height-and-larger-heading-final">
+/* Workflow cards: same height, aligned center; enlarge the whole heading line. */
+@media screen and (min-width: 641px) {
+  .process-flow {
+    align-items: center !important;
+  }
+  .process-flow .process-step {
+    box-sizing: border-box !important;
+    height: 164px !important;
+    min-height: 164px !important;
+    max-height: 164px !important;
+    align-self: center !important;
+  }
+  .process-flow .process-connector {
+    align-self: center !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  .process-head {
+    display: flex !important;
+    align-items: baseline !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px 20px !important;
+    margin-bottom: 24px !important;
+    text-align: center !important;
+  }
+  .process-head .process-label {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    letter-spacing: 2px !important;
+  }
+  .process-head .process-note {
+    font-size: 17px !important;
+    line-height: 1.5 !important;
+    font-weight: 600 !important;
+  }
+}
+@media screen and (max-width: 640px) {
+  .process-head .process-label {
+    font-size: 12px !important;
+  }
+  .process-head .process-note {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    font-weight: 600 !important;
+  }
+}
+</style>
+
+
+<style id="workflow-clean-arrow-redesign">
+/* Replace the awkward connector marks with a simple, centered right-pointing arrow. */
+.process-flow .process-connector {
+  position: relative !important;
+  align-self: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 24px !important;
+  min-width: 42px !important;
+  margin: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: rgba(255,255,255,.9) !important;
+}
+.process-flow .process-connector::before {
+  content: "" !important;
+  display: block !important;
+  width: 100% !important;
+  height: 1px !important;
+  background: rgba(255,255,255,.62) !important;
+}
+.process-flow .process-connector::after {
+  content: "›" !important;
+  position: absolute !important;
+  right: -1px !important;
+  top: 50% !important;
+  transform: translateY(-53%) !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 26px !important;
+  font-weight: 300 !important;
+  line-height: 1 !important;
+  color: rgba(255,255,255,.96) !important;
+  background: transparent !important;
+}
+@media screen and (max-width: 640px) {
+  .process-flow .process-connector {
+    min-width: 24px !important;
+    height: 20px !important;
+  }
+}
+</style>
+
+
+<style id="workflow-arrow-desktop-force-v2">
+@media screen and (min-width: 641px) {
+  .process-flow .process-connector,
+  .process-flow .connector,
+  .process-flow .arrow,
+  .process-flow [class*="connector"],
+  .process-flow [class*="arrow"] {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-self: center !important;
+    height: 24px !important;
+    min-width: 42px !important;
+    width: 42px !important;
+    margin: 0 8px !important;
+    padding: 0 !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    color: transparent !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+  .process-flow .process-connector::before,
+  .process-flow .connector::before,
+  .process-flow .arrow::before,
+  .process-flow [class*="connector"]::before,
+  .process-flow [class*="arrow"]::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 2px !important;
+    top: 50% !important;
+    width: auto !important;
+    height: 1px !important;
+    transform: translateY(-50%) !important;
+    background: rgba(255,255,255,.72) !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+  .process-flow .process-connector::after,
+  .process-flow .connector::after,
+  .process-flow .arrow::after,
+  .process-flow [class*="connector"]::after,
+  .process-flow [class*="arrow"]::after {
+    content: "→" !important;
+    position: absolute !important;
+    right: -2px !important;
+    top: 50% !important;
+    transform: translateY(-54%) !important;
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 22px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    color: #ffffff !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+}
+</style>
+
+
+<style id="workflow-desktop-heading-and-card-alignment-v3">
+@media screen and (min-width: 641px) {
+  /* Enforce one shared grid row so all three cards have the same vertical alignment and height. */
+  .process-flow {
+    display: grid !important;
+    grid-template-columns: minmax(140px, 160px) 48px minmax(140px, 160px) 48px minmax(140px, 160px) !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    column-gap: 10px !important;
+  }
+  .process-flow .process-step {
+    align-self: stretch !important;
+    height: 164px !important;
+    min-height: 164px !important;
+    max-height: 164px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .process-flow .process-connector,
+  .process-flow .connector,
+  .process-flow .arrow,
+  .process-flow [class*="connector"],
+  .process-flow [class*="arrow"] {
+    align-self: center !important;
+    width: 48px !important;
+    min-width: 48px !important;
+    height: 24px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .process-head {
+    display: flex !important;
+    align-items: baseline !important;
+    justify-content: center !important;
+    gap: 14px 22px !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 28px !important;
+    text-align: center !important;
+  }
+  .process-head .process-label {
+    font-size: 16px !important;
+    line-height: 1.45 !important;
+    letter-spacing: 2px !important;
+    font-weight: 800 !important;
+  }
+  .process-head .process-note {
+    font-size: 20px !important;
+    line-height: 1.5 !important;
+    font-weight: 700 !important;
+  }
+}
+@media screen and (max-width: 640px) {
+  .process-head .process-label {
+    font-size: 13px !important;
+  }
+  .process-head .process-note {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    font-weight: 700 !important;
+  }
+}
+</style>
+
+
+<style id="workflow-cards-same-baseline-corrected">
+@media screen and (min-width: 641px) {
+  /* Explicitly cancel the featured card's original vertical lift. */
+  .process-flow {
+    display: grid !important;
+    grid-template-columns: minmax(140px, 160px) 48px minmax(140px, 160px) 48px minmax(140px, 160px) !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    column-gap: 10px !important;
+  }
+  .process-flow > .process-step,
+  .process-flow .process-step,
+  .process-flow .process-step.featured {
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+    align-self: stretch !important;
+    height: 164px !important;
+    min-height: 164px !important;
+    max-height: 164px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+</style>
+
+
+<style id="workflow-heading-size-final">
+@media screen and (min-width: 641px) {
+  .process-head .process-label {
+    font-size: 19px !important;
+    line-height: 1.4 !important;
+    letter-spacing: 2.2px !important;
+    font-weight: 800 !important;
+  }
+  .process-head .process-note {
+    font-size: 25px !important;
+    line-height: 1.45 !important;
+    font-weight: 800 !important;
+  }
+}
+@media screen and (max-width: 640px) {
+  .process-head .process-label {
+    font-size: 15px !important;
+    letter-spacing: 1.8px !important;
+  }
+  .process-head .process-note {
+    font-size: 18px !important;
+    line-height: 1.5 !important;
+    font-weight: 800 !important;
+  }
+}
+</style>
+
+
+<style id="workflow-mobile-arrow-clean-redesign">
+@media screen and (max-width: 640px) {
+  /* Mobile workflow is vertical: replace the broken boxy arrows with a clean slim down-arrow. */
+  .process-flow .process-connector,
+  .process-flow .connector,
+  .process-flow .arrow,
+  .process-flow [class*="connector"],
+  .process-flow [class*="arrow"] {
+    position: relative !important;
+    display: block !important;
+    width: 28px !important;
+    min-width: 28px !important;
+    max-width: 28px !important;
+    height: 22px !important;
+    min-height: 22px !important;
+    margin: 5px auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    color: transparent !important;
+    transform: none !important;
+  }
+  .process-flow .process-connector::before,
+  .process-flow .connector::before,
+  .process-flow .arrow::before,
+  .process-flow [class*="connector"]::before,
+  .process-flow [class*="arrow"]::before {
+    content: "" !important;
+    position: absolute !important;
+    display: block !important;
+    left: 50% !important;
+    top: 1px !important;
+    right: auto !important;
+    width: 1px !important;
+    height: 13px !important;
+    background: rgba(255,255,255,.72) !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    transform: translateX(-50%) !important;
+  }
+  .process-flow .process-connector::after,
+  .process-flow .connector::after,
+  .process-flow .arrow::after,
+  .process-flow [class*="connector"]::after,
+  .process-flow [class*="arrow"]::after {
+    content: "↓" !important;
+    position: absolute !important;
+    display: block !important;
+    left: 50% !important;
+    right: auto !important;
+    top: 8px !important;
+    width: auto !important;
+    height: auto !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    color: rgba(255,255,255,.92) !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    transform: translateX(-50%) !important;
+  }
+}
+</style>
+
+
+<style id="scroll-gradient-motion">
+  :root {
+    --scroll-progress: 0;
+    --scroll-blue: 0.04;
+  }
+
+  /* Gentle blue atmosphere that shifts as the visitor scrolls. */
+  body {
+    background:
+      radial-gradient(ellipse at 50% calc(8% + var(--scroll-progress) * 24%), rgba(55, 111, 164, calc(0.035 + var(--scroll-blue))), transparent 44%),
+      #ffffff;
+    background-attachment: fixed;
+    transition: background-color .35s ease;
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity .72s cubic-bezier(.2,.65,.25,1),
+      transform .72s cubic-bezier(.2,.65,.25,1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Keep the motion subtle and respect accessibility preferences. */
+  @media (max-width: 640px) {
+    .scroll-reveal {
+      transform: translateY(16px);
+      transition-duration: .58s;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-reveal,
+    .scroll-reveal.is-visible {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+      will-change: auto !important;
+    }
+    body { background-attachment: scroll; }
+  }
+</style>
+
+
+<style id="hero-cta-order-fix">
+.hero-cta {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+.hero-cta .pill { flex: 0 0 auto !important; }
+@media (max-width: 640px) {
+  .hero-cta { gap: 10px !important; }
+}
+</style>
+
+
+<style id="center-navigation-links-viewport-center">
+/* True viewport-centered navigation: independent of the brand and admin button widths. */
+.nav {
+  position: sticky !important;
+  isolation: isolate !important;
+}
+.nav .nav-inner {
+  position: static !important;
+}
+.nav .navlinks {
+  position: absolute !important;
+  left: 50vw !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 26px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+}
+@media (max-width: 800px) {
+  .nav .navlinks { gap: 14px !important; }
+}
+@media (max-width: 540px) {
+  .nav .navlinks {
+    left: 50vw !important;
+    gap: 11px !important;
+  }
+  .nav .navlinks a { font-size: 11px !important; }
+}
+</style>
+
+<style id="selected-works-fine-position">
+/* Fine adjustment: move the Selected Works text and category filters a little left. */
+#portfolio .section-heading,
+#portfolio .section-head,
+#portfolio .section-intro,
+#portfolio .portfolio-tools {
+  padding-left: clamp(5px, 0.8vw, 10px) !important;
+  box-sizing: border-box !important;
+}
+#portfolio .section-heading h2,
+#portfolio .section-head h2,
+#portfolio .section-intro h2 {
+  margin-left: 0 !important;
+}
+@media (max-width: 640px) {
+  #portfolio .section-heading,
+  #portfolio .section-head,
+  #portfolio .section-intro,
+  #portfolio .portfolio-tools {
+    padding-left: 8px !important;
+    padding-right: 12px !important;
+  }
+}
+</style>
+
+<style id="mobile-workflow-font-size-exact-selectors">
+/* Mobile workflow: target the actual .process-step elements used by this page. */
+@media screen and (max-width: 640px) {
+  .hero-art .process-step {
+    min-height: 84px !important;
+    padding: 14px 13px !important;
+    box-sizing: border-box !important;
+  }
+  .hero-art .process-step .process-index {
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+    font-weight: 800 !important;
+  }
+  .hero-art .process-step h3 {
+    font-size: 17px !important;
+    line-height: 1.35 !important;
+    font-weight: 800 !important;
+    margin-top: 2px !important;
+    margin-bottom: 4px !important;
+  }
+  .hero-art .process-step p {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    font-weight: 500 !important;
+  }
+  .hero-art .process-step .process-icon {
+    font-size: 17px !important;
+  }
+}
+</style>
+
+
+<style id="mobile-workflow-number-icon-center">
+/* Mobile workflow cards: align step number, icon and text in balanced columns. */
+@media screen and (max-width: 640px) {
+  .hero-art .process-step {
+    display: grid !important;
+    grid-template-columns: 28px 42px minmax(0, 1fr) !important;
+    align-items: center !important;
+    column-gap: 10px !important;
+    row-gap: 3px !important;
+  }
+  .hero-art .process-step .process-index {
+    grid-column: 1 !important;
+    grid-row: 1 / span 2 !important;
+    align-self: center !important;
+    justify-self: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+  }
+  .hero-art .process-step .process-icon {
+    grid-column: 2 !important;
+    grid-row: 1 / span 2 !important;
+    align-self: center !important;
+    justify-self: center !important;
+    margin: 0 !important;
+  }
+  .hero-art .process-step h3 {
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+    align-self: end !important;
+    justify-self: start !important;
+    margin: 0 0 2px !important;
+    text-align: left !important;
+  }
+  .hero-art .process-step p {
+    grid-column: 3 !important;
+    grid-row: 2 !important;
+    align-self: start !important;
+    justify-self: start !important;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+}
+</style>
+
+
+<style id="scroll-position-proportional-reveal-style">
+/* Scroll-linked reveal: each main section becomes fully visible as it enters view. */
+.scroll-progress-reveal {
+  opacity: var(--scroll-reveal-opacity, 1);
+  transform: translate3d(0, var(--scroll-reveal-y, 0px), 0);
+  will-change: opacity, transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    will-change: auto;
+  }
+}
+</style>
+
+</head><body>
+<header class="nav"><div class="nav-inner"><a class="brand" href="#top">李科乐<span>AI VIDEO CREATOR</span></a><nav class="navlinks"><a href="#strengths">个人优势</a><a href="#portfolio">作品集</a><a href="#contact">联系我</a></nav><button class="small-btn" id="manageToggle">作品管理</button></div></header>
+<main id="top"><section class="hero wrap"><div class="eyebrow">AI VIDEO · CONTENT STRATEGY</div><h1>从视频剪辑出发，<br><span class="gradient">把 AI 用进内容生产。</span></h1><p>你好，我是李科乐。拥有 4 年以上视频剪辑经验，参与过商业短视频、海外短剧与 AI 视频项目，能将 AI 工具融入实际制作流程。</p><div class="hero-cta"><a class="pill secondary" href="#strengths">了解我的优势</a><a class="pill primary" href="#portfolio">探索我的作品 ↘</a></div><div class="hero-art">
+  <div class="process-head"><span class="process-label">MY PROCESS</span><span class="process-note">从想法到交付，让每一步都有价值</span></div>
+  <div class="process-flow">
+    <article class="process-step"><span class="process-index">01</span><div class="process-icon">✳</div><h3>内容策划</h3><p>梳理需求 · 明确表达</p></article>
+    <div class="process-connector" aria-hidden="true"></div>
+    <article class="process-step featured"><span class="process-index">02</span><div class="process-icon">✦</div><h3>AI 创作</h3><p>工具组合 · 视频制作</p></article>
+    <div class="process-connector" aria-hidden="true"></div>
+    <article class="process-step"><span class="process-index">03</span><div class="process-icon">↗</div><h3>优化交付</h3><p>复盘反馈 · 持续迭代</p></article>
+  </div>
 </div></section>
-<section class="bottom wrap" id="contact"><div><div class="kicker" style="color:#a1a1a8">LET'S CREATE SOMETHING</div><h2>有想法，<br>就一起把它做出来。</h2><p>欢迎交流 AI 视频创作、短视频内容策划、AI 工作流及商业视频项目。期待用清晰的创意与扎实的执行，让每一份想法变成可见的成果。</p></div><div class="contact-box"><span>EMAIL</span><a href="mailto:1585440698@qq.com">1585440698@qq.com</a><span>PHONE</span><a href="tel:18300114568">183 0011 4568</a><br><a class="pill" href="mailto:1585440698@qq.com">发送邮件 ↗</a></div></section></main>
-<footer class="wrap"><span>© <span id="year"></span> 李科乐 · AI Video Creator</span><span>Designed with clarity. Built for ideas.</span></footer><div class="toast" id="toast"></div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<section class="section wrap" id="strengths"><div class="section-head"><div><div class="kicker">01 — MY STRENGTHS</div><h2>有剪辑与 AI 经验，<br>也能推动项目完整落地。</h2></div><p class="intro">从商业视频制作到 AI 短剧项目，我兼顾内容执行、项目协作与数据反馈。</p></div><div class="advantages">
+<article class="adv"><span class="num">01 / PROJECT LEADERSHIP</span><div><h3>项目统筹与团队协作</h3><p>担任 AI 悬疑动画团队组长，参与项目策划、分工与进度管理，推动作品发布至海外平台。</p></div></article>
+<article class="adv"><span class="num">02 / AI PRODUCTION</span><div><h3>AI 工具落地应用</h3><p>使用 ChatGPT、DeepSeek，并结合 Vidu、星流等工具完成 AI 视频相关制作。</p></div></article>
+<article class="adv"><span class="num">03 / CONTENT PLANNING</span><div><h3>脚本策划与素材二创</h3><p>擅长素材筛选、内容提炼、脚本协作，以及短剧预告片与二次创作。</p></div></article>
+<article class="adv"><span class="num">04 / DATA INSIGHTS</span><div><h3>平台数据与内容优化</h3><p>依据 TikTok 等平台数据分析受众与素材表现，参与海外投放优化，单条素材播放量最高达 47K。</p></div></article>
+<article class="adv"><span class="num">05 / VIDEO EDITING</span><div><h3>多年剪辑与商业项目经验</h3><p>4 年以上视频剪辑经验；服务 200+ 泛家居品牌，累计参与上新 5000+。</p></div></article>
+<article class="adv"><span class="num">06 / WORKFLOW DESIGN</span><div><h3>资源整合与流程搭建</h3><p>整合 AI 工具与素材资源，衔接前期准备、内容生成和后期剪辑。</p></div></article></div>
+<div class="metrics"><div class="metric"><strong>90W+</strong><span>运营账号 3 个月内单条视频播放量</span></div><div class="metric"><strong>200+</strong><span>服务过的泛家居品牌</span></div><div class="metric"><strong>5000+</strong><span>累计参与短视频上新项目</span></div><div class="metric"><strong>4年+</strong><span>视频剪辑与内容制作经验</span></div></div></section>
+<section class="portfolio-section" id="portfolio"><div class="wrap"><div class="section-head"><div><div class="kicker">02 — MY WORK</div><h2>项目与作品。<br>用实际成果说明能力。</h2></div><p class="intro">展示 AI 视频、商业短视频与短剧项目，突出本人负责的环节及项目结果。可通过“作品管理”添加作品。</p></div><div class="portfolio-tools" id="filters"><button class="filter active" data-filter="全部">全部作品</button><button class="filter" data-filter="AI视频">AI 视频</button><button class="filter" data-filter="商业短视频">商业短视频</button><button class="filter" data-filter="短剧/叙事">短剧 / 叙事</button><button class="filter" data-filter="其他">其他</button></div><div class="portfolio-grid" id="portfolioGrid" style="margin-top:22px"></div>
+<div class="upload-panel" id="uploadPanel"><h3>作品管理</h3><p class="hint">此版本是纯前端个人作品集：新增作品会保存在当前浏览器中，适合本地预览和整理。若要正式上线并让你从任意设备管理作品，需要部署后台、登录权限和云端媒体存储。单个本地媒体文件限制为 18MB；较大视频建议使用可公开访问的媒体链接。</p><form id="workForm"><input type="hidden" id="editId"><div class="form-grid"><div class="field"><label for="title">作品名称 *</label><input id="title" required maxlength="80" placeholder="例如：AI 家庭生活广告"></div><div class="field"><label for="category">作品分类</label><select id="category"><option>AI视频</option><option>商业短视频</option><option>短剧/叙事</option><option>其他</option></select></div><div class="field full"><label for="description">作品简介</label><textarea id="description" maxlength="500" placeholder="创作思路、使用工具、负责环节或项目成果"></textarea></div><div class="field"><label for="mediaFile">上传视频或封面图片</label><input id="mediaFile" type="file" accept="video/*,image/*"></div><div class="field"><label for="mediaUrl">或填写媒体链接</label><input id="mediaUrl" type="url" placeholder="https://...（媒体直链）"></div><div class="field"><label for="date">项目时间（可选）</label><input id="date" placeholder="例如：2026"></div><div class="field"><label for="cover">链接媒体类型</label><select id="cover"><option value="auto">自动识别</option><option value="image">图片</option><option value="video">视频</option></select></div></div><div class="form-actions"><button class="pill primary" type="submit" id="saveBtn">保存作品</button><button class="pill" type="button" id="cancelEdit" style="display:none">取消编辑</button><button class="pill" type="button" id="exportBtn">导出作品清单</button><button class="pill danger" type="button" id="clearBtn">清空本地作品</button></div></form></div></div></section>
+<section class="bottom wrap" id="contact"><div><div class="kicker" style="color:#a1a1a8">LET’S WORK TOGETHER</div><h2>聊聊项目需求，<br>一起把内容做好。</h2><p>欢迎交流 AI 视频制作、短视频剪辑、内容策划与项目合作。</p></div><div class="contact-box"><span>EMAIL</span><a href="mailto:1585440698@qq.com">1585440698@qq.com</a><span>CONTACT</span><a href="tel:18300114568">183 0011 4568</a><br><a class="pill" href="mailto:1585440698@qq.com">发送邮件 ↗</a></div></section></main>
+<footer class="wrap"><span>© <span id="year"></span> 李科乐 · AI Video Creator</span><span>Clear design. Creative work.</span></footer><div class="toast" id="toast"></div>
 <script>
-/* 上线前填写 Supabase Project URL 与 publishable/anon key。数据权限由数据库 RLS 强制执行。 */
-const SUPABASE_URL = "https://mibufnomdgqbtarlajwg.supabase.co/rest/v1/";
-const SUPABASE_ANON_KEY = "sb_publishable_FOSxEt9hTC9Qipi8bGGd1g_ODAw1M_Y";
-const categories = ["全部","AI视频","商业短视频","短剧/叙事","其他"];
-let works = [], activeFilter = "全部";
-const esc = s => String(s ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-function render(){
- const list=works.filter(w=>activeFilter==="全部"||w.category===activeFilter), grid=document.getElementById("portfolioGrid");
- if(!list.length){grid.innerHTML='<div class="empty"><strong>作品即将呈现</strong>我正在持续整理和更新作品。<br>欢迎稍后再来浏览。</div>';return;}
- grid.innerHTML=list.map(w=>{
-   let media="";
-   if(w.media_url && w.media_type==="video") media=`<video src="${esc(w.media_url)}" controls preload="metadata" playsinline></video>`;
-   else if(w.media_url && w.media_type==="image") media=`<img src="${esc(w.media_url)}" alt="${esc(w.title)}" loading="lazy">`;
-   else media=`<div class="placeholder"><div class="play">▶</div><strong>${esc(w.title)}</strong><span>作品预览 / ${esc(w.category)}</span></div>`;
-   return `<article class="work-card"><div class="work-media">${media}</div><div class="work-info"><div class="work-top"><span class="tag">${esc(w.category)}</span><span class="work-date">${esc(w.year||"")}</span></div><h3>${esc(w.title)}</h3><p>${esc(w.description||"")}</p></div></article>`;
- }).join("");
+const KEY='likel_ai_portfolio_v1';let works=[];let activeFilter='全部';const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));function toast(m){let t=$('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2300)}function save(){try{localStorage.setItem(KEY,JSON.stringify(works));return true}catch(e){toast('保存失败：本地空间可能不足，请使用媒体链接');return false}}function render(){let list=works.filter(w=>activeFilter==='全部'||w.category===activeFilter),g=$('portfolioGrid');if(!list.length){g.innerHTML='<div class="empty"><strong>作品即将呈现</strong>你的下一个好作品，可以从这里开始。<br>点击右上角「作品管理」，添加视频、封面或作品链接。</div>';return}g.innerHTML=list.map(w=>{let m='';if(w.media)m=w.mediaType==='video'?`<video src="${esc(w.media)}" controls preload="metadata" playsinline></video>`:`<img src="${esc(w.media)}" alt="${esc(w.title)}" loading="lazy">`;else if(w.url){if(w.mediaType==='video')m=`<video src="${esc(w.url)}" controls preload="metadata" playsinline></video>`;else if(w.mediaType==='image'||/\.(png|jpe?g|webp|gif)(\?.*)?$/i.test(w.url))m=`<img src="${esc(w.url)}" alt="${esc(w.title)}" loading="lazy">`;else m=`<a class="placeholder" href="${esc(w.url)}" target="_blank" rel="noopener"><div class="play">↗</div><strong>${esc(w.title)}</strong><span>打开作品链接</span></a>`}else m=`<div class="placeholder"><div class="play">▶</div><strong>${esc(w.title)}</strong><span>作品预览 / ${esc(w.category)}</span></div>`;return `<article class="work-card"><div class="work-media">${m}</div><div class="work-info"><div class="work-top"><span class="tag">${esc(w.category)}</span><span class="work-date">${esc(w.date||'')}</span></div><h3>${esc(w.title)}</h3><p>${esc(w.description||'')}</p><div class="form-actions"><button class="small-btn" onclick="editWork('${w.id}')">编辑</button><button class="small-btn danger" onclick="deleteWork('${w.id}')">删除</button></div></div></article>`}).join('')}
+function resetForm(){$('workForm').reset();$('editId').value='';$('saveBtn').textContent='保存作品';$('cancelEdit').style.display='none'}function editWork(id){let w=works.find(x=>x.id===id);if(!w)return;$('editId').value=id;$('title').value=w.title;$('category').value=w.category;$('description').value=w.description||'';$('date').value=w.date||'';$('mediaUrl').value=w.url||'';$('cover').value=w.mediaType||'auto';$('mediaFile').value='';$('saveBtn').textContent='更新作品';$('cancelEdit').style.display='inline-flex';$('uploadPanel').classList.add('open');$('uploadPanel').scrollIntoView({behavior:'smooth'})}function deleteWork(id){if(confirm('确定删除这条作品吗？')){works=works.filter(w=>w.id!==id);if(save()){render();toast('作品已删除')}}}
+$('filters').addEventListener('click',e=>{let b=e.target.closest('[data-filter]');if(!b)return;activeFilter=b.dataset.filter;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));render()});$('manageToggle').onclick=()=>{$('uploadPanel').classList.toggle('open');if($('uploadPanel').classList.contains('open'))$('uploadPanel').scrollIntoView({behavior:'smooth',block:'nearest'})};$('cancelEdit').onclick=resetForm;$('workForm').addEventListener('submit',async e=>{e.preventDefault();let id=$('editId').value||('w'+Date.now()+Math.random().toString(36).slice(2,7)),old=works.find(w=>w.id===id)||{},file=$('mediaFile').files[0],media=old.media||'',mediaType=old.mediaType||'auto';if(file){if(file.size>18*1024*1024){toast('单个文件请控制在 18MB 内，较大视频请使用媒体链接');return}media=await new Promise((res,rej)=>{let r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(file)});mediaType=file.type.startsWith('video/')?'video':'image'}let url=$('mediaUrl').value.trim();if(url&&!file){media='';mediaType=$('cover').value}let w={id,title:$('title').value.trim(),category:$('category').value,description:$('description').value.trim(),date:$('date').value.trim(),media,mediaType,url},i=works.findIndex(x=>x.id===id);if(i>=0)works[i]=w;else works.unshift(w);if(save()){resetForm();render();toast(i>=0?'作品已更新':'作品已添加')}});$('clearBtn').onclick=()=>{if(confirm('确定清空当前浏览器保存的全部作品吗？此操作不可撤销。')){works=[];if(save()){render();resetForm();toast('本地作品已清空')}}};$('exportBtn').onclick=()=>{let b=new Blob([JSON.stringify(works.map(({media,...r})=>r),null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='李科乐-作品清单.json';a.click();URL.revokeObjectURL(a.href);toast('已导出作品清单（不含媒体文件）')};$('year').textContent=new Date().getFullYear();try{works=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){works=[]}render();
+</script>
+
+<script id="scroll-gradient-motion-script">
+(() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealSelectors = [
+    'main > section',
+    'body > section',
+    '.strength-card',
+    '.work-card',
+    '.project-card',
+    '.stat-card',
+    '.process-step',
+    '.portfolio-card',
+    '.contact-panel'
+  ];
+  const targets = [...new Set(revealSelectors.flatMap(selector => Array.from(document.querySelectorAll(selector))))];
+
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    targets.forEach((el, index) => {
+      el.classList.add('scroll-reveal');
+      if (el.matches('.process-step')) {
+        el.style.setProperty('--reveal-delay', `${(index % 3) * 70}ms`);
+      }
+    });
+
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          currentObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+
+    targets.forEach(el => observer.observe(el));
+  }
+
+  let ticking = false;
+  const updateScrollGradient = () => {
+    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+    document.documentElement.style.setProperty('--scroll-progress', progress.toFixed(3));
+    document.documentElement.style.setProperty('--scroll-blue', (progress * 0.055).toFixed(3));
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateScrollGradient);
+      ticking = true;
+    }
+  }, { passive: true });
+  updateScrollGradient();
+})();
+</script>
+
+
+<style id="hero-button-hover-colors">
+/* Explicitly target both buttons beneath the main headline. */
+main .hero .hero-cta a[href="#strengths"],
+main .hero .hero-cta a[href="#portfolio"] {
+  background-color: #356b9f !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border: 1px solid #356b9f !important;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s ease !important;
 }
-function setupFilters(){
- const holder=document.getElementById("filters");
- if(!holder)return;
- holder.addEventListener("click",e=>{const b=e.target.closest("[data-filter]");if(!b)return;activeFilter=b.dataset.filter;holder.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));render();});
+main .hero .hero-cta a[href="#strengths"]:hover,
+main .hero .hero-cta a[href="#portfolio"]:hover,
+main .hero .hero-cta a[href="#strengths"]:focus-visible,
+main .hero .hero-cta a[href="#portfolio"]:focus-visible,
+main .hero .hero-cta a[href="#strengths"].is-hovered,
+main .hero .hero-cta a[href="#portfolio"].is-hovered {
+  background-color: #ffcf66 !important;
+  background-image: none !important;
+  color: #073665 !important;
+  border-color: #ffcf66 !important;
 }
-async function init(){
- setupFilters();
- if(SUPABASE_URL.startsWith("PASTE_")||SUPABASE_ANON_KEY.startsWith("PASTE_")){
-   document.getElementById("portfolioGrid").innerHTML='<div class="empty"><strong>网站待连接云端数据库</strong>管理员完成 Supabase 配置后，作品会自动显示在这里。</div>';return;
- }
- try{
-   const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
-   const {data,error}=await sb.from("works").select("id,title,category,description,year,media_url,media_type,sort_order").eq("published",true).order("sort_order",{ascending:true}).order("created_at",{ascending:false});
-   if(error)throw error; works=data||[]; render();
- }catch(e){document.getElementById("portfolioGrid").innerHTML='<div class="empty"><strong>暂时无法加载作品</strong>请稍后再试。</div>';console.error(e);}
+@media (hover: none) {
+  main .hero .hero-cta a[href="#strengths"]:active,
+  main .hero .hero-cta a[href="#portfolio"]:active {
+    background-color: #ffcf66 !important;
+    color: #073665 !important;
+    border-color: #ffcf66 !important;
+  }
 }
-document.getElementById("year").textContent=new Date().getFullYear();init();
-</script></body></html>
+</style>
+<script id="hero-button-hover-colors-script">
+(() => {
+  const buttons = document.querySelectorAll('main .hero .hero-cta a[href="#strengths"], main .hero .hero-cta a[href="#portfolio"]');
+  buttons.forEach(button => {
+    button.addEventListener('pointerenter', () => button.classList.add('is-hovered'));
+    button.addEventListener('pointerleave', () => button.classList.remove('is-hovered'));
+    button.addEventListener('blur', () => button.classList.remove('is-hovered'));
+  });
+})();
+</script>
+
+<style id="all-blue-buttons-hover-yellow">
+/* Exact selectors for this site's real buttons. */
+.hero-cta .pill,
+.portfolio-tools .filter {
+  background: #356b9f !important;
+  color: #fff !important;
+  border: 1px solid #356b9f !important;
+  box-shadow: none !important;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease !important;
+}
+.hero-cta .pill:hover,
+.hero-cta .pill:focus-visible,
+.portfolio-tools .filter:hover,
+.portfolio-tools .filter:focus-visible,
+.hero-cta .pill.is-hovered,
+.portfolio-tools .filter.is-hovered {
+  background: #ffcf66 !important;
+  color: #073665 !important;
+  border-color: #ffcf66 !important;
+}
+@media (hover: none) {
+  .hero-cta .pill:active,
+  .portfolio-tools .filter:active {
+    background: #ffcf66 !important;
+    color: #073665 !important;
+    border-color: #ffcf66 !important;
+  }
+}
+</style>
+<script id="all-blue-buttons-hover-yellow-script">
+(() => {
+  document.querySelectorAll('.hero-cta .pill, .portfolio-tools .filter').forEach(button => {
+    button.addEventListener('pointerenter', () => button.classList.add('is-hovered'));
+    button.addEventListener('pointerleave', () => button.classList.remove('is-hovered'));
+    button.addEventListener('blur', () => button.classList.remove('is-hovered'));
+  });
+})();
+</script>
+
+<style id="contact-box-yellow-fix">
+/* Exact markup on this page is section#contact .contact-box > a */
+#contact .contact-box > a[href^="mailto:"],
+#contact .contact-box > a[href^="tel:"] {
+  color: #ffcf66 !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  line-height: 1.8 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  overflow-wrap: anywhere;
+}
+#contact .contact-box > a[href^="mailto:"]:hover,
+#contact .contact-box > a[href^="tel:"]:hover,
+#contact .contact-box > a[href^="mailto:"]:focus-visible,
+#contact .contact-box > a[href^="tel:"]:focus-visible {
+  color: #ffe2a0 !important;
+}
+@media (max-width: 640px) {
+  #contact .contact-box > a[href^="mailto:"],
+  #contact .contact-box > a[href^="tel:"] {
+    font-size: 21px !important;
+  }
+}
+</style>
+
+
+<style id="restore-send-email-button-colors">
+/* Restore the send-email button: yellow fill, dark-blue readable label. */
+#contact a[href^="mailto:"]:not(.contact-email),
+#contact .contact-box a[href^="mailto:"]:last-of-type {
+  color: #073665 !important;
+}
+/* The CTA button is identified by its button-like class, without changing the email address link. */
+#contact a.button[href^="mailto:"],
+#contact a.btn[href^="mailto:"],
+#contact .pill[href^="mailto:"],
+#contact .contact-button[href^="mailto:"] {
+  background: #ffcf66 !important;
+  color: #073665 !important;
+  border-color: #ffcf66 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+</style>
+
+
+<style id="force-contact-email-palette-yellow">
+#contact .contact-box a[href^="mailto:"]:not(.button):not(.btn):not(.pill):not(.contact-button),
+#contact .contact-box a.contact-email {
+  color: #ffcf66 !important;
+  -webkit-text-fill-color: #ffcf66 !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+</style>
+
+
+<style id="enlarge-contact-email-phone">
+#contact .contact-box a[href^="mailto:"]:not(.button):not(.btn):not(.pill):not(.contact-button),
+#contact .contact-box a.contact-email {
+  color: #ffcf66 !important;
+  -webkit-text-fill-color: #ffcf66 !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  line-height: 1.7 !important;
+  display: inline-block !important;
+}
+#contact .contact-box a[href^="tel:"],
+#contact .contact-box a.contact-phone {
+  color: #ffcf66 !important;
+  -webkit-text-fill-color: #ffcf66 !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  line-height: 1.7 !important;
+  display: inline-block !important;
+}
+@media (max-width: 640px) {
+  #contact .contact-box a[href^="mailto:"]:not(.button):not(.btn):not(.pill):not(.contact-button),
+  #contact .contact-box a.contact-email,
+  #contact .contact-box a[href^="tel:"],
+  #contact .contact-box a.contact-phone {
+    font-size: 25px !important;
+  }
+}
+</style>
+
+
+<style id="portfolio-filter-hover-yellow">
+/* Portfolio category filters: blue at rest, palette yellow on hover/focus. */
+#portfolio .portfolio-tools .filter,
+.portfolio-tools .filter {
+  background: #356b9f !important;
+  background-color: #356b9f !important;
+  color: #fff !important;
+  border: 1px solid #356b9f !important;
+  box-shadow: none !important;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease !important;
+}
+#portfolio .portfolio-tools .filter:hover,
+#portfolio .portfolio-tools .filter:focus-visible,
+.portfolio-tools .filter:hover,
+.portfolio-tools .filter:focus-visible,
+.portfolio-tools .filter.is-hovered {
+  background: #ffcf66 !important;
+  background-color: #ffcf66 !important;
+  color: #073665 !important;
+  border-color: #ffcf66 !important;
+}
+@media (hover: none) {
+  #portfolio .portfolio-tools .filter:active,
+  .portfolio-tools .filter:active {
+    background: #ffcf66 !important;
+    color: #073665 !important;
+    border-color: #ffcf66 !important;
+  }
+}
+</style>
+<script id="portfolio-filter-hover-yellow-script">
+(() => {
+  document.querySelectorAll('#portfolio .portfolio-tools .filter, .portfolio-tools .filter').forEach(button => {
+    button.addEventListener('pointerenter', () => button.classList.add('is-hovered'));
+    button.addEventListener('pointerleave', () => button.classList.remove('is-hovered'));
+    button.addEventListener('blur', () => button.classList.remove('is-hovered'));
+  });
+})();
+</script>
+
+
+<style id="enlarge-brand-header">
+/* Enlarge the brand name and English role in the top navigation. */
+header .brand,
+header .brand a,
+header .site-brand,
+header .site-brand a,
+header .logo,
+header .logo a,
+header .brand-name {
+  font-size: 19px !important;
+  line-height: 1.35 !important;
+}
+header .brand strong,
+header .site-brand strong,
+header .logo strong,
+header .brand-name strong {
+  font-size: 21px !important;
+  font-weight: 700 !important;
+}
+header .brand span,
+header .site-brand span,
+header .logo span,
+header .brand-name span {
+  font-size: 13px !important;
+}
+@media (max-width: 640px) {
+  header .brand,
+  header .brand a,
+  header .site-brand,
+  header .site-brand a,
+  header .logo,
+  header .logo a,
+  header .brand-name {
+    font-size: 18px !important;
+  }
+  header .brand strong,
+  header .site-brand strong,
+  header .logo strong,
+  header .brand-name strong {
+    font-size: 20px !important;
+  }
+  header .brand span,
+  header .site-brand span,
+  header .logo span,
+  header .brand-name span {
+    font-size: 12px !important;
+  }
+}
+</style>
+
+
+<script id="scroll-position-proportional-reveal-script">
+(() => {
+  const sections = Array.from(document.querySelectorAll(
+    'main#top > section, main#top .section, main#top .portfolio-section, main#top .bottom'
+  ));
+  const targets = [...new Set(sections)].filter(el =>
+    !el.closest('header') && !el.classList.contains('hero')
+  );
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  targets.forEach(el => el.classList.add('scroll-progress-reveal'));
+
+  let ticking = false;
+  const update = () => {
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    targets.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      // Progress is tied to the section's position: 0 while still below the viewport,
+      // increasing smoothly during entry, and 1 once the section reaches the viewport.
+      const start = vh * 0.92;
+      const finish = vh * 0.34;
+      const progress = Math.max(0, Math.min(1, (start - rect.top) / (start - finish)));
+      el.style.setProperty('--scroll-reveal-opacity', String(0.12 + progress * 0.88));
+      el.style.setProperty('--scroll-reveal-y', `${(1 - progress) * 22}px`);
+    });
+    ticking = false;
+  };
+  const requestUpdate = () => {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }
+  };
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+  window.addEventListener('load', requestUpdate);
+  update();
+})();
+</script>
+
+</body></html>
